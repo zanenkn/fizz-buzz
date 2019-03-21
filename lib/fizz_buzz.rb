@@ -1,16 +1,24 @@
 def fizz_buzz(number)
-    if number %3 == 0 && number %5 == 0
-    'fizzbuzz'
+    if number.class != Integer
+        'NoBuzz! FizzBuzz requires whole numbers!'
+        
+    elsif divides_by?(number,15)
+        'FizzBuzz'
     
-    elsif number %3 == 0
-        'fizz'
+    elsif divides_by?(number,3)
+        'Fizz'
 
-    elsif number %5 == 0
-        'buzz'
+    elsif divides_by?(number,5)
+        'Buzz'
     
     else
         number
+        
     end
 
+end
 
+
+def divides_by?(number,divider)
+    number % divider == 0
 end

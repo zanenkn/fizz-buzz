@@ -5,16 +5,25 @@ describe "fizz_buzz" do
         expect(fizz_buzz(1)).to eq 1
     end
 
-    it 'returns fizz if number is divisable by 3' do
-        expect(fizz_buzz(3)).to eq "fizz"
+    it 'returns Fizz if number is divisable by 3' do
+        expect(fizz_buzz(3)).to eq "Fizz"
     end
 
-    it 'returns buzz if number is divisable by 5' do
-        expect(fizz_buzz(5)).to eq "buzz"
+    it 'returns Buzz if number is divisable by 5' do
+        expect(fizz_buzz(5)).to eq "Buzz"
     end
 
-    it 'returns fizzbuzz if number is divisable by 15' do
-        expect(fizz_buzz(15)).to eq "fizzbuzz"
+    it 'returns FizzBuzz if number is divisable by 15' do
+        expect(fizz_buzz(15)).to eq "FizzBuzz"
     end
+
+    it 'returns NoBuzz message if number is a float' do
+        expect(fizz_buzz(0.457)).to eq "NoBuzz! FizzBuzz requires whole numbers!"
+    end
+
+    it 'returns NoBuzz message if number is a string' do
+        expect(fizz_buzz("yo")).to eq "NoBuzz! FizzBuzz requires whole numbers!"
+    end
+
 
 end
